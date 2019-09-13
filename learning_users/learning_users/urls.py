@@ -27,5 +27,5 @@ urlpatterns = [
     path('logout/',views.user_logout,name='logout'),
 ]
 
-#urlpatterns += staticfiles_urlpatterns()
+urlpatterns += staticfiles_urlpatterns()
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

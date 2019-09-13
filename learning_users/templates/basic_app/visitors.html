@@ -8,7 +8,11 @@
 		{% if visitors %}
 			<ol>
 				{% for visitor in visitors %}
-						<li><img class="rounded-circle col-sm-2" style="max-height:200px; max-width:200px;"src={{visitor.profile_pic.url}} alt={{visitor.profile_pic}}></li>
+				    {% if visitor.profile_pic %}
+    					<li><img class="rounded-circle col-sm-2" style="max-height:200px; max-width:200px;"src={{visitor.profile_pic.url}} alt={{visitor.profile_pic}}></li>
+    				{% else %}
+    				    <li>No profile picture</li>
+    				{% endif %}
 					<ul>
 						<li>Username: {{ visitor.user.username }}</li>
 						<li>Portfolio Site: {{ visitor.portfolio_site }}</li>
@@ -19,4 +23,5 @@
 			<p>No one has registered!</p>
 		{% endif %}
 	</div>
+</div>
 {% endblock %}
