@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from basic_app.forms import UserForm, UserProfileInfoForm
+from basic_app.models import UserProfileInfo
 
 #
 from django.contrib.auth import authenticate,login,logout
@@ -67,3 +68,8 @@ def user_login(request):
             return HttpResponse("invalid login details supplied!")
     else:
         return render(request,'basic_app/login.html',{})
+
+# Displays everyone who has registered on the page
+def visitors(request):
+    visitors = UserProfileInfo.objects.all()
+    return render(request, 'basic_app/visitors.html',context={'visitors':visitors})

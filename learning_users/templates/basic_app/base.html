@@ -21,6 +21,9 @@
       <li class="nav-item active">
 		  <a class="nav-link" href="{% url 'basic_app:register' %}">Register</a>
       </li>
+	  <li class="nav-item active">
+		  <a class="nav-link" href="{% url 'basic_app:visitors' %}">Visitor List</a>
+	  </li>
 
 	  {% if user.is_authenticated %}
 		<li class="nav-item active">
