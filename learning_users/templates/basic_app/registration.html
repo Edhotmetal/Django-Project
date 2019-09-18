@@ -3,6 +3,9 @@
 
 {% block body_block %}
 
+<!-- Spinning Block CSS -->
+<link rel="stylesheet" href="{% static 'css/block.css' %}">
+
 <div class = "jumbotron">
 	{% if registered %}
 		<h1>Thank you for registering!</h1>
@@ -18,4 +21,17 @@
 		</form>
 
 	{% endif %}
+<main class="wrap" role="main">
+		<div class="cube">
+			<div class="face front"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path d="m0 0h16v16h-16z"/><path d="m0 0h15v15h-15z" fill="#E86010"/><path d="m1 1h14v14h-14z" fill="#FFA048"/><path d="m2 13h1v1h-1z"/><path d="m13 13h1v1h-1z"/><path d="m13 2h1v1h-1z"/><path d="m2 2h1v1h-1z"/><path d="m10 14h-2v-2h2zm-1-5h-1v2h2v-2h2v-4h-1v-1h-5v1h-1v3h2v-3h3v3h-1z"/><path d="m9 13h-2v-2h2zm-1-5h-1v2h2v-2h2v-4h-1v-1h-5v1h-1v3h2v-3h3v3h-1z" fill="#E86010"/></svg><div class="shade"></div></div>
+			<div class="face right"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path d="m0 0h16v16h-16z"/><path d="m0 0h15v15h-15z" fill="#E86010"/><path d="m1 1h14v14h-14z" fill="#FFA048"/><path d="m2 13h1v1h-1z"/><path d="m13 13h1v1h-1z"/><path d="m13 2h1v1h-1z"/><path d="m2 2h1v1h-1z"/><path d="m10 14h-2v-2h2zm-1-5h-1v2h2v-2h2v-4h-1v-1h-5v1h-1v3h2v-3h3v3h-1z"/><path d="m9 13h-2v-2h2zm-1-5h-1v2h2v-2h2v-4h-1v-1h-5v1h-1v3h2v-3h3v3h-1z" fill="#E86010"/></svg><div class="shade"></div></div>
+			<div class="face back"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path d="m0 0h16v16h-16z"/><path d="m0 0h15v15h-15z" fill="#E86010"/><path d="m1 1h14v14h-14z" fill="#FFA048"/><path d="m2 13h1v1h-1z"/><path d="m13 13h1v1h-1z"/><path d="m13 2h1v1h-1z"/><path d="m2 2h1v1h-1z"/><path d="m10 14h-2v-2h2zm-1-5h-1v2h2v-2h2v-4h-1v-1h-5v1h-1v3h2v-3h3v3h-1z"/><path d="m9 13h-2v-2h2zm-1-5h-1v2h2v-2h2v-4h-1v-1h-5v1h-1v3h2v-3h3v3h-1z" fill="#E86010"/></svg><div class="shade"></div></div>
+			<div class="face left"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path d="m0 0h16v16h-16z"/><path d="m0 0h15v15h-15z" fill="#E86010"/><path d="m1 1h14v14h-14z" fill="#FFA048"/><path d="m2 13h1v1h-1z"/><path d="m13 13h1v1h-1z"/><path d="m13 2h1v1h-1z"/><path d="m2 2h1v1h-1z"/><path d="m10 14h-2v-2h2zm-1-5h-1v2h2v-2h2v-4h-1v-1h-5v1h-1v3h2v-3h3v3h-1z"/><path d="m9 13h-2v-2h2zm-1-5h-1v2h2v-2h2v-4h-1v-1h-5v1h-1v3h2v-3h3v3h-1z" fill="#E86010"/></svg><div class="shade"></div></div>
+
+			<div class="face top"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path d="m0 0h16v16h-16z"/><path d="m0 0h15v15h-15z" fill="#E86010"/><path d="m1 1h14v14h-14z" fill="#FFA048"/><path d="m2 13h1v1h-1z"/><path d="m13 13h1v1h-1z"/><path d="m13 2h1v1h-1z"/><path d="m2 2h1v1h-1z"/></svg></div>
+			<div class="face bottom"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path d="m0 0h16v16h-16z"/><path d="m0 0h15v15h-15z" fill="#E86010"/><path d="m1 1h14v14h-14z" fill="#FFA048"/><path d="m2 13h1v1h-1z"/><path d="m13 13h1v1h-1z"/><path d="m13 2h1v1h-1z"/><path d="m2 2h1v1h-1z"/></svg></div>
+		</div>
+	</main>
+</div>
+
 {% endblock %}
