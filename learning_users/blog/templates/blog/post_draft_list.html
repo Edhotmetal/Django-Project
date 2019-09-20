@@ -1,0 +1,15 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block content %}
+<h1>Your Drafts:</h1>
+{% for post in posts %}
+	<div class="post">
+		<p class="date">Created: {{post.create_date|date:"d-m-Y"}}</p>
+		<p>By: {{post.author}}
+		<img class="rounded col-sm-2" src={{post.get_author_profile_pic|default:"/static/iconic/svg/person.svg"}} alt="Author Profile Picture">
+		</p>
+		<h2><a href="{% url 'blog:post_detail' pk=post.pk %}">{{post.title}}</a></h2>
+		<p>{{post.text|safe|truncatechars:200}}</p>
+	</div>
+	{% endfor %}
+{% endblock %}

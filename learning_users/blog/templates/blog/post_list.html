@@ -1,0 +1,19 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block content %}
+<div class="centerstage">
+	<h1 class="techfont" id="blog_heading">_(-_(-_-(-_(-_Blog_-)_-)-_-)_-)_</h1>
+	{% for post in post_list %}
+	<div class="post">
+		<h1><a href="{% url 'blog:post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+		<div class="date">
+			<p>Published on: {{post.published_date|date:"D M Y"}}</p>
+			<p>By: {{post.get_author}}</p>
+			<img class="rounded col-sm-2" src={{post.get_author_profile_pic|default:"/static/iconic/svg/person.svg"}} alt="Author Profile Picture" %}>
+		</div>
+		<p>{{post.text|safe|truncatechars:200}}</p>
+		<a href="{% url 'blog:post_detail' pk=post.pk %}">Comments: {{ post.approved_comments.count }}</a>
+	</div>
+	{% endfor %}
+</div>
+{% endblock %}

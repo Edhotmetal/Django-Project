@@ -1,0 +1,27 @@
+{% extends "basic_app/base.html" %}
+{% block body_block %}
+
+<div class="jumbotron">
+	<h1>Visitors</h1>
+	<h4>Everyone who has registered on this page</h4>
+	<div class="visitor_list">
+		{% if visitors %}
+			<ol>
+				{% for visitor in visitors %}
+				    {% if visitor.profile_pic %}
+    					<li><img class="rounded-circle col-sm-2" style="max-height:200px; max-width:200px;"src={{visitor.profile_pic.url}} alt={{visitor.profile_pic}}></li>
+    				{% else %}
+    				    <li>No profile picture</li>
+    				{% endif %}
+					<ul>
+						<li>Username: {{ visitor.user.username }}</li>
+						<li>Portfolio Site: {{ visitor.portfolio_site }}</li>
+					</ul>
+				{% endfor %}
+			</ol>
+		{% else %}
+			<p>No one has registered!</p>
+		{% endif %}
+	</div>
+</div>
+{% endblock %}

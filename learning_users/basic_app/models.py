@@ -12,5 +12,8 @@ class UserProfileInfo(models.Model):
 
     profile_pic = models.ImageField(upload_to='profile_pics',blank=True)
 
+    def get_profile_pic(self):
+        return self.profile_pic
+
     def __str__(self):
         return self.user.username

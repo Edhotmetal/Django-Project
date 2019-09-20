@@ -1,0 +1,48 @@
+{% extends "basic_app/base.html" %}
+{% load static %}
+
+{% block body_block %}
+
+<<<<<<< HEAD:learning_users/basic_app/templates/basic_app/registration.html
+=======
+<!-- Spinning Block CSS -->
+<link rel="stylesheet" href="{% static 'css/block.css' %}">
+
+>>>>>>> bbe03024433871bee457a26d72ae443bb3748a20:learning_users/templates/basic_app/registration.html
+<div class = "jumbotron">
+	{% if registered %}
+		<h1>Thank you for registering!</h1>
+	{% else %}
+		<h1>Register Here!</h1>
+		<h3>Fill out the form:</h3>
+
+		<form enctype="multipart/form-data" method="POST">
+			{% csrf_token %}
+			{{ user_form.as_p }}
+			{{ profile_form.as_p }}
+			<input type = "submit" value = "Register">
+		</form>
+
+	{% endif %}
+<<<<<<< HEAD:learning_users/basic_app/templates/basic_app/registration.html
+
+
+=======
+>>>>>>> bbe03024433871bee457a26d72ae443bb3748a20:learning_users/templates/basic_app/registration.html
+<main class="wrap" role="main">
+		<div class="cube">
+			<div class="face front"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path d="m0 0h16v16h-16z"/><path d="m0 0h15v15h-15z" fill="#E86010"/><path d="m1 1h14v14h-14z" fill="#FFA048"/><path d="m2 13h1v1h-1z"/><path d="m13 13h1v1h-1z"/><path d="m13 2h1v1h-1z"/><path d="m2 2h1v1h-1z"/><path d="m10 14h-2v-2h2zm-1-5h-1v2h2v-2h2v-4h-1v-1h-5v1h-1v3h2v-3h3v3h-1z"/><path d="m9 13h-2v-2h2zm-1-5h-1v2h2v-2h2v-4h-1v-1h-5v1h-1v3h2v-3h3v3h-1z" fill="#E86010"/></svg><div class="shade"></div></div>
+			<div class="face right"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path d="m0 0h16v16h-16z"/><path d="m0 0h15v15h-15z" fill="#E86010"/><path d="m1 1h14v14h-14z" fill="#FFA048"/><path d="m2 13h1v1h-1z"/><path d="m13 13h1v1h-1z"/><path d="m13 2h1v1h-1z"/><path d="m2 2h1v1h-1z"/><path d="m10 14h-2v-2h2zm-1-5h-1v2h2v-2h2v-4h-1v-1h-5v1h-1v3h2v-3h3v3h-1z"/><path d="m9 13h-2v-2h2zm-1-5h-1v2h2v-2h2v-4h-1v-1h-5v1h-1v3h2v-3h3v3h-1z" fill="#E86010"/></svg><div class="shade"></div></div>
+			<div class="face back"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path d="m0 0h16v16h-16z"/><path d="m0 0h15v15h-15z" fill="#E86010"/><path d="m1 1h14v14h-14z" fill="#FFA048"/><path d="m2 13h1v1h-1z"/><path d="m13 13h1v1h-1z"/><path d="m13 2h1v1h-1z"/><path d="m2 2h1v1h-1z"/><path d="m10 14h-2v-2h2zm-1-5h-1v2h2v-2h2v-4h-1v-1h-5v1h-1v3h2v-3h3v3h-1z"/><path d="m9 13h-2v-2h2zm-1-5h-1v2h2v-2h2v-4h-1v-1h-5v1h-1v3h2v-3h3v3h-1z" fill="#E86010"/></svg><div class="shade"></div></div>
+			<div class="face left"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path d="m0 0h16v16h-16z"/><path d="m0 0h15v15h-15z" fill="#E86010"/><path d="m1 1h14v14h-14z" fill="#FFA048"/><path d="m2 13h1v1h-1z"/><path d="m13 13h1v1h-1z"/><path d="m13 2h1v1h-1z"/><path d="m2 2h1v1h-1z"/><path d="m10 14h-2v-2h2zm-1-5h-1v2h2v-2h2v-4h-1v-1h-5v1h-1v3h2v-3h3v3h-1z"/><path d="m9 13h-2v-2h2zm-1-5h-1v2h2v-2h2v-4h-1v-1h-5v1h-1v3h2v-3h3v3h-1z" fill="#E86010"/></svg><div class="shade"></div></div>
+
+			<div class="face top"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path d="m0 0h16v16h-16z"/><path d="m0 0h15v15h-15z" fill="#E86010"/><path d="m1 1h14v14h-14z" fill="#FFA048"/><path d="m2 13h1v1h-1z"/><path d="m13 13h1v1h-1z"/><path d="m13 2h1v1h-1z"/><path d="m2 2h1v1h-1z"/></svg></div>
+			<div class="face bottom"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path d="m0 0h16v16h-16z"/><path d="m0 0h15v15h-15z" fill="#E86010"/><path d="m1 1h14v14h-14z" fill="#FFA048"/><path d="m2 13h1v1h-1z"/><path d="m13 13h1v1h-1z"/><path d="m13 2h1v1h-1z"/><path d="m2 2h1v1h-1z"/></svg></div>
+		</div>
+	</main>
+<<<<<<< HEAD:learning_users/basic_app/templates/basic_app/registration.html
+=======
+</div>
+
+>>>>>>> bbe03024433871bee457a26d72ae443bb3748a20:learning_users/templates/basic_app/registration.html
+{% endblock %}
