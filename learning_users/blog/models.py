@@ -29,7 +29,10 @@ class Post(models.Model):
         if(username == "admin"):
             return ""
         else:
-            pic = get_object_or_404(UserProfileInfo,user_id=get_object_or_404(User,username=username).id).profile_pic.url
+            try:
+                pic = get_object_or_404(UserProfileInfo,user_id=get_object_or_404(User,username=username).id).profile_pic.url
+            except ValueError:
+                return ""
             return pic
 
 
