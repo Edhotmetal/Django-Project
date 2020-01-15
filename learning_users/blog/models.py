@@ -8,6 +8,10 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class Post(models.Model):
+
+    class Meta:
+        app_label = 'blog'
+
     author = models.ForeignKey('auth.User',on_delete=models.CASCADE,blank=True)
     title = models.CharField(max_length=200)
     text = models.TextField()
@@ -43,6 +47,9 @@ class Post(models.Model):
         return self.title
 
 class Comment(models.Model):
+
+    class Meta:
+        app_label = 'blog'
     post = models.ForeignKey('blog.Post',related_name='comments',on_delete=models.CASCADE)
     author = models.CharField(max_length=200)
     text = models.TextField()

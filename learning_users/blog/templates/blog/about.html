@@ -1,6 +1,17 @@
 {% extends "blog/base.html" %}
+{% load static %}
 {% block content %}
-<h1>About Me</h1>
-<p>My name is Edward Fernandez. Thanks for visiting my test blog!</p>
-<a href="https://www.linkedin.com/in/fernandez-edward/">Visit my LinkedIn page</a>
+<div class="container-fluid">
+    <h1>Edward Fernandez</h1>
+    <img class = "rounded col-md-5" src="/static/images/Edward_Fernandez.jpg" alt="A picture of me is supposed to be here!">
+    <p>Thanks for visiting my blog!</p>
+    <p>I am a software developer and musician. When I'm not coding, you can find me playing guitar or working out.</p>
+    <p>This blog aims to give you a glimpse into some of that!</p>
+
+    <h2>HELP</h2>
+    <p>If you ever need help with your account or navigating this page, feel free to send me an e-mail at <strong>edhotmetal@protonmail.com</strong></p>
+    <p>Bug reports are also welcome!</p>
+    <a href="https://www.linkedin.com/in/fernandez-edward/">Visit my LinkedIn page</a>
+</div>
+
 {% endblock %}

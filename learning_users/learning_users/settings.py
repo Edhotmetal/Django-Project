@@ -25,9 +25,9 @@ MEDIA_DIR = os.path.abspath(os.path.join(BASE_DIR, 'media'))
 SECRET_KEY = '!ti1)(iri47&xcu6!b9ew0+%c%x4(uvy$l!kv=foq)!_a6+qwf'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['edhotmetal.pythonanywhere.com','localhost',]
+ALLOWED_HOSTS = ['edhotmetal.pythonanywhere.com',]
 
 
 # Application definition
@@ -130,7 +130,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATICFILES_DIRS = [STATIC_DIR,]
+STATICFILES_DIRS = [STATIC_DIR,os.path.join(BASE_DIR,'/blog/static')]
 STATIC_URL = '/static/'
 
 # MEDIA
