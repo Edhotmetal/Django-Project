@@ -15,7 +15,7 @@ class PostForm(forms.ModelForm):
         widgets = {
                 'author':forms.TextInput(attrs={'hidden':''}),
                 'title':forms.TextInput(attrs={'class':'textinputclass'}),
-                'text':forms.Textarea(attrs={'class':'editable medium-editor-textarea postcontent'}),
+                'text':forms.Textarea(attrs={'class':'editable textarea postcontent'}),
                 }
 class CommentForm(forms.ModelForm):
 

@@ -4,6 +4,7 @@ from django.urls import reverse
 from django.shortcuts import get_object_or_404
 from basic_app.models import UserProfileInfo
 from django.contrib.auth.models import User
+from tinymce.models import HTMLField
 
 # Create your models here.
 
@@ -14,7 +15,7 @@ class Post(models.Model):
 
     author = models.ForeignKey('auth.User',on_delete=models.CASCADE,blank=True)
     title = models.CharField(max_length=200)
-    text = models.TextField()
+    text = HTMLField()
     create_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True,null=True)
 

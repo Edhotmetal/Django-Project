@@ -24,4 +24,5 @@ urlpatterns = [
     path('basic_app/',include('basic_app.urls')),
     path('blog/',include('blog.urls')),
     path('logout/',views.user_logout,name='logout'),
+    path('tinymce/', include('tinymce.urls')),
 ]
