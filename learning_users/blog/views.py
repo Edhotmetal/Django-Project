@@ -2,13 +2,13 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from blog.models import Post, Comment
 from blog.forms import PostForm, CommentForm
-from basic_app.models import UserProfileInfo
 from django.contrib.auth.models import User
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import (TemplateView,ListView,DetailView,
                                 CreateView, UpdateView, DeleteView)
+from django.core.exceptions import PermissionDenied
 
 # Create your views here.
 
@@ -28,7 +28,7 @@ class PostListView(DefaultContextMixin, ListView):
     model = Post
     template_name = 'blog/post_list.html'
     context_object_name = 'post_list'
-    
+
     def get_queryset(self):
         return Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
 
@@ -47,14 +47,30 @@ class CreatePostView(CreatePostMixin, LoginRequiredMixin, CreateView):
     form_class = PostForm
     model = Post
 
-class PostUpdateView(LoginRequiredMixin, UpdateView):
+# Make sure the user is the author of the current post before editing
+# https://stackoverflow.com/questions/55510300/how-to-protect-user-from-editing-others-blog-posts-in-django
+class IsAuthorMixin(object):
+    permission_denied_message = ("You are not the author of this post - you cannot edit it")
+
+    def dispatch (self, request, *args, **kwargs):
+        if self.get_object().author != request.user:
+            raise PermissionDenied(self.get_permission_denied_message())
+        return super().dispatch(request, *args, **kwargs)
+
+    def get_permission_denied_message(self):
+        """
+        Override this method to override the permission_denied_message attribute.
+        """
+        return self.permission_denied_message
+
+class PostUpdateView(IsAuthorMixin, LoginRequiredMixin, UpdateView):
     login_url = '/login/'
     redirect_field_name = 'blog/post_detail.html'
 
     form_class = PostForm
     model = Post
 
-class PostDeleteView(LoginRequiredMixin, DeleteView):
+class PostDeleteView(IsAuthorMixin, LoginRequiredMixin, DeleteView):
     model = Post
     success_url = reverse_lazy('blog:post_list')
 
