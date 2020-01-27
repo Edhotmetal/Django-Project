@@ -18,7 +18,7 @@
 
 	<p class='postcontent'>{{ post.text|safe|linebreaksbr}}</p>
 
-{% if user.is_authenticated %}
+{% if user.username|lower == post.author|lower %}
 	<a class="btn btn-primary" href="{% url 'blog:post_edit' pk=post.pk %}">
 		<img src="{% static 'iconic/svg/pencil.svg' %}" alt="Edit">
 	</a>
