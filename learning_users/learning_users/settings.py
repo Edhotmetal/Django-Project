@@ -25,7 +25,7 @@ MEDIA_DIR = os.path.abspath(os.path.join(BASE_DIR, 'media'))
 SECRET_KEY = '!ti1)(iri47&xcu6!b9ew0+%c%x4(uvy$l!kv=foq)!_a6+qwf'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['edhotmetal.pythonanywhere.com',]
 
@@ -139,3 +139,7 @@ MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
 
 LOGIN_URL = 'basic_app/user_login'
+TINYMCE_JS_URL = os.path.join(STATIC_DIR, "js/tinymce/custom/js")
+TINYMCE_JS_ROOT = os.path.join(MEDIA_ROOT, "tinymce")
+TINYMCE_SPELLCHECKER = True
+TINYMCE_COMPRESSOR = True
