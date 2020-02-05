@@ -11,7 +11,7 @@
 			<p>By: {{post.get_author}}</p>
 			<img class="rounded col-sm-2" src={{post.get_author_profile_pic|default:"/static/iconic/svg/person.svg"}} alt="Author Profile Picture" %}>
 		</div>
-		<p>{{post.text|safe|truncatechars:200}}</p>
+		<p>{{post.text|safe|truncatechars_html:200}}</p>
 		<a href="{% url 'blog:post_detail' pk=post.pk %}">Comments: {{ post.approved_comments.count }}</a>
 	</div>
 	{% endfor %}
