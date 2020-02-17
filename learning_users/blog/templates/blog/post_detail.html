@@ -16,7 +16,7 @@
 		<img class="rounded col-sm-2" src={{post.get_author_profile_pic|default:"/static/iconic/svg/person.svg"}} alt="Author Profile Picture">
 	</div>
 
-	<p class='postcontent'>{{ post.text|safe|linebreaksbr}}</p>
+	<p class='postcontent'>{{ post.text|safe}}</p>
 
 {% if user.username|lower == post.author|lower %}
 	<a class="btn btn-primary" href="{% url 'blog:post_edit' pk=post.pk %}">
