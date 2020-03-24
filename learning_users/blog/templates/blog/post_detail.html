@@ -13,7 +13,7 @@
 
 	<div class="postauthor">
 		<p>Written by: {{ post.author }}</p>
-		<img class="rounded col-sm-2" src={{post.get_author_profile_pic|default:"/static/iconic/svg/person.svg"}} alt="Author Profile Picture">
+		<img class="rounded col-sm-2 profile_pic" src={{post.get_author_profile_pic|default:"/static/iconic/svg/person.svg"}} alt="Author Profile Picture">
 	</div>
 
 	<p class='postcontent'>{{ post.text|safe}}</p>
