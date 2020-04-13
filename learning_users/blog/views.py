@@ -82,7 +82,7 @@ class DraftListView(LoginRequiredMixin, ListView):
 
     def get_queryset(self):
         return Post.objects.filter(published_date__isnull=True,
-                author=get_object_or_404(User,username=self.request.user).id).order_by('create_date')
+                author=get_object_or_404(User,username=self.request.user).id).order_by('-create_date')
 
 ###########################
 ###########################
