@@ -8,7 +8,7 @@
 		{{ post.published_date }}
 	</div>
 {% else %}
-	<a class="btn btn-default" href="{% url 'blog:post_publish' pk=post.pk %}">Publish</a>
+	<a class="btn btn-warning" href="{% url 'blog:post_publish' pk=post.pk %}">Publish</a>
 {% endif %}
 
 	<div class="postauthor">
